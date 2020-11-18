@@ -63,7 +63,7 @@ const Process = ({ className, ...rest }) => {
           variant="text"
           startIcon={<DoneAllIcon />}
         >
-          Completar Proceso
+          Completar Trámite
         </Button>
       </CardActions>
     </Card>

@@ -1,6 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import clsx from 'clsx';
+import React from "react";
+import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
+import clsx from "clsx";
 import {
   Avatar,
   Box,
@@ -10,31 +11,32 @@ import {
   Divider,
   Grid,
   Typography,
-  makeStyles
-} from '@material-ui/core';
-import People from '@material-ui/icons/People';
-import Visibility from '@material-ui/icons/Visibility';
+  makeStyles,
+} from "@material-ui/core";
+import People from "@material-ui/icons/People";
+import Visibility from "@material-ui/icons/Visibility";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    display: 'flex',
-    flexDirection: 'column'
+    display: "flex",
+    flexDirection: "column",
   },
   statsItem: {
-    alignItems: 'center',
-    display: 'flex'
+    alignItems: "center",
+    display: "flex",
   },
   statsIcon: {
-    marginRight: theme.spacing(1)
+    marginRight: theme.spacing(1),
   },
   large: {
     width: theme.spacing(10),
-    height: theme.spacing(10)
-  }
+    height: theme.spacing(10),
+  },
 }));
 
 const AreaCard = ({ className, product, ...rest }) => {
   const classes = useStyles();
+  const navigate = useNavigate();
 
   return (
     <Card className={clsx(classes.root, className)} {...rest}>
@@ -65,6 +67,7 @@ const AreaCard = ({ className, product, ...rest }) => {
         <Grid container justify="space-between" spacing={2}>
           <Grid className={classes.statsItem} item>
             <Button
+              onClick={() => navigate("/app/areas/area-detalles")}
               variant="contained"
               color="primary"
               startIcon={<Visibility />}
@@ -86,7 +89,7 @@ const AreaCard = ({ className, product, ...rest }) => {
 
 AreaCard.propTypes = {
   className: PropTypes.string,
-  product: PropTypes.object.isRequired
+  product: PropTypes.object.isRequired,
 };
 
 export default AreaCard;

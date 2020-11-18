@@ -33,7 +33,7 @@ const Toolbar = ({ className, ...rest }) => {
         <Button className={classes.importButton}>Importar</Button>
         <Button className={classes.exportButton}>Exportar</Button>
         <Button color="primary" variant="contained" startIcon={<AddBox />}>
-          Añadir proceso
+          Añadir Trámite
         </Button>
       </Box>
       <Box mt={3}>
@@ -51,7 +51,7 @@ const Toolbar = ({ className, ...rest }) => {
                     </InputAdornment>
                   )
                 }}
-                placeholder="Buscar proceso"
+                placeholder="Buscar tramite"
                 variant="outlined"
               />
             </Box>

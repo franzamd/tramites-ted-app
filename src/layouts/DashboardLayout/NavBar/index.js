@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
-import { Link as RouterLink, useLocation } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import React, { useEffect } from "react";
+import { Link as RouterLink, useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
 import {
   Avatar,
   Box,
@@ -9,8 +9,8 @@ import {
   Hidden,
   List,
   Typography,
-  makeStyles
-} from '@material-ui/core';
+  makeStyles,
+} from "@material-ui/core";
 import {
   AlertCircle as AlertCircleIcon,
   BarChart as BarChartIcon,
@@ -20,26 +20,27 @@ import {
   UserPlus as UserPlusIcon,
   Users as UsersIcon,
   Archive as ArchiveIcon,
-  Hexagon as HexagonIcon
-} from 'react-feather';
-import NavItem from './NavItem';
+  Folder as FolderIcon,
+  Hexagon as HexagonIcon,
+} from "react-feather";
+import NavItem from "./NavItem";
 
 const user = {
-  avatar: '/static/images/avatars/fcortez.jpg',
-  jobTitle: 'Jefe Sección TIC',
-  name: 'Fernando Cortez'
+  avatar: "/static/images/avatars/fcortez.jpg",
+  jobTitle: "Jefe Sección TIC",
+  name: "Fernando Cortez",
 };
 
 const items = [
   {
-    href: '/app/dashboard',
+    href: "/app/dashboard",
     icon: BarChartIcon,
-    title: 'Dashboard'
+    title: "Dashboard",
   },
   {
-    href: '/app/users',
+    href: "/app/users",
     icon: UsersIcon,
-    title: 'Usuarios'
+    title: "Usuarios",
   },
   // {
   //   href: '/app/customers',
@@ -47,14 +48,19 @@ const items = [
   //   title: 'Customers'
   // },
   {
-    href: '/app/areas',
+    href: "/app/areas",
     icon: HexagonIcon,
-    title: 'Áreas'
+    title: "Áreas",
   },
   {
-    href: '/app/processes',
+    href: "/app/tramites-area",
     icon: ArchiveIcon,
-    title: 'Procesos'
+    title: "Bandeja de Trámites",
+  },
+  {
+    href: "/app/tramites",
+    icon: FolderIcon,
+    title: "Trámites",
   },
   // {
   //   href: '/app/products',
@@ -62,46 +68,46 @@ const items = [
   //   title: 'Products'
   // },
   {
-    href: '/app/account',
+    href: "/app/account",
     icon: UserIcon,
-    title: 'Perfil'
+    title: "Perfil",
   },
   {
-    href: '/app/settings',
+    href: "/app/settings",
     icon: SettingsIcon,
-    title: 'Ajustes'
+    title: "Ajustes",
   },
   {
-    href: '/login',
+    href: "/login",
     icon: LockIcon,
-    title: 'Login'
+    title: "Login",
   },
   {
-    href: '/register',
+    href: "/register",
     icon: UserPlusIcon,
-    title: 'Registro'
+    title: "Registro",
   },
   {
-    href: '/404',
+    href: "/404",
     icon: AlertCircleIcon,
-    title: 'Error'
-  }
+    title: "Error",
+  },
 ];
 
 const useStyles = makeStyles(() => ({
   mobileDrawer: {
-    width: 256
+    width: 256,
   },
   desktopDrawer: {
     width: 256,
     top: 64,
-    height: 'calc(100% - 64px)'
+    height: "calc(100% - 64px)",
   },
   avatar: {
-    cursor: 'pointer',
+    cursor: "pointer",
     width: 64,
-    height: 64
-  }
+    height: 64,
+  },
 }));
 
 const NavBar = ({ onMobileClose, openMobile }) => {
@@ -134,7 +140,7 @@ const NavBar = ({ onMobileClose, openMobile }) => {
       <Divider />
       <Box p={2}>
         <List>
-          {items.map(item => (
+          {items.map((item) => (
             <NavItem
               href={item.href}
               key={item.title}
@@ -210,12 +216,12 @@ const NavBar = ({ onMobileClose, openMobile }) => {
 
 NavBar.propTypes = {
   onMobileClose: PropTypes.func,
-  openMobile: PropTypes.bool
+  openMobile: PropTypes.bool,
 };
 
 NavBar.defaultProps = {
   onMobileClose: () => {},
-  openMobile: false
+  openMobile: false,
 };
 
 export default NavBar;

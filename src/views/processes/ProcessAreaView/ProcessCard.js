@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import clsx from 'clsx';
+import React from "react";
+import PropTypes from "prop-types";
+import clsx from "clsx";
 import {
   Avatar,
   Box,
@@ -9,24 +9,24 @@ import {
   Divider,
   Grid,
   Typography,
-  makeStyles
-} from '@material-ui/core';
-import { Link } from 'react-router-dom';
-import FolderSharedIcon from '@material-ui/icons/FolderShared';
-import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+  makeStyles,
+} from "@material-ui/core";
+import { Link } from "react-router-dom";
+import FolderSharedIcon from "@material-ui/icons/FolderShared";
+import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    display: 'flex',
-    flexDirection: 'column'
+    display: "flex",
+    flexDirection: "column",
   },
   statsItem: {
-    alignItems: 'center',
-    display: 'flex'
+    alignItems: "center",
+    display: "flex",
   },
   statsIcon: {
-    marginRight: theme.spacing(1)
-  }
+    marginRight: theme.spacing(1),
+  },
 }));
 
 const ProcessCard = ({ className, product, ...rest }) => {
@@ -44,7 +44,7 @@ const ProcessCard = ({ className, product, ...rest }) => {
           gutterBottom
           variant="h4"
         >
-          <Link to="/app/processes/process">{product.title}</Link>
+          <Link to="/app/tramites-area/tramite-detalles">{product.title}</Link>
         </Typography>
         <Typography align="center" color="textPrimary" variant="body1">
           {product.description}
@@ -77,7 +77,7 @@ const ProcessCard = ({ className, product, ...rest }) => {
 
 ProcessCard.propTypes = {
   className: PropTypes.string,
-  product: PropTypes.object.isRequired
+  product: PropTypes.object.isRequired,
 };
 
 export default ProcessCard;
